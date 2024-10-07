@@ -1,0 +1,27 @@
+Notes for Fetch Data Exercise
+
+Data Modeling:
+Snowflake or Star Schema?
+	most likely star, but lets see the data and see how many dimensions we create
+	fact tables will be each file: brands, receipts, users (maybe users is a dim too)
+
+Dim Tables and their related facts
+rewardsReceiptItemList_dim --> receipts
+	    "barcode": "028400642255",
+            "description": "DORITOS TORTILLA CHIP SPICY SWEET CHILI REDUCED FAT BAG 1 OZ",
+            "finalPrice": "10.00",
+            "itemPrice": "10.00",
+            "needsFetchReview": true,
+            "needsFetchReviewReason": "USER_FLAGGED",
+            "partnerItemId": "2",
+            "pointsNotAwardedReason": "Action not allowed for user and CPG",
+            "pointsPayerId": "5332f5fbe4b03c9a25efd0ba",
+            "preventTargetGapPoints": true,
+            "quantityPurchased": 1,
+            "rewardsGroup": "DORITOS SPICY SWEET CHILI SINGLE SERVE",
+            "rewardsProductPartnerId": "5332f5fbe4b03c9a25efd0ba",
+            "userFlaggedBarcode": "028400642255",
+            "userFlaggedDescription": "DORITOS TORTILLA CHIP SPICY SWEET CHILI REDUCED FAT BAG 1 OZ",
+            "userFlaggedNewItem": true,
+            "userFlaggedPrice": "10.00",
+            "userFlaggedQuantity": 1

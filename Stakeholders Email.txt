@@ -1,0 +1,22 @@
+Hi Scott,
+
+I hope you're having a good day. I was recently working on your request to ingest data to Fetch Rewards for a given set of users, receipts, and brands. During this process, I discovered a few potentially hazardous issues and just wanted to clarify a few things before going ahead with any potential fixes or redrafts of data. All of this was discovered during the initial ingest phase of onboarding data with some routine checks, to ensure proper data quality going forward. It has not yet been pushed to production, but we need to clarify discrepancies and or courses of action prior: 
+
+1) There were missing values across the board in all three datasets. Some may be optional fields, however, the fields listed below seem as though they should be required. Without wanting to make major assumptions, I compiled a list of fields that may be required in the future. If you could confirm and point out any other required fields in the datasets provided, it'll make your data more robust. If we identify required fields, we can discuss next steps for backfilling the current empty fields. Options include defaulting this field going forward, or if values are provided, we can backfill as needed.
+    Receipts.purchaseDate
+    Receipts.purchasedItemCount
+    Receipts.totalSpent
+    Users.lastLogin
+
+2) There are duplicate values in the Users dataset. I can add checks for duplicate records going forward and remove duplicates with approval.
+
+3) Currently, a few fields have extreme values that may be incorrect, notably totalSpent. I wanted to confirm this value's validity. There is a record with the value of $4,721.95, if this is a valid number, there is no issue. However, if this is an outlier, given the median value is only $18.20, further evaluation is recommended. Two other fields had similar issues: pointsEarned and purchasedItemCount. If there are extreme outliers, we can create rules going forward to keep these values from showing up.
+
+4) There are about 150 records in the Receipts dataset with user IDs that don't match the ID value provided for the Users dataset.  Are any values missing? Is there a valid reason for the information gap? The mismatched data has potential for analysis complications, data loss if a customer can't be linked to a given transaction, and or any marketing campaigns associated with the data may be impacted. 
+
+5) Some of the data is stored in embedded dictionaries that require extra work to ingest and clean in order to properly display the necessary data. Can you generate the required data without the need for these nested fields? It would exponentially increase the efficiency and efficacy of both our support and your end product. 
+
+I appreciate you taking the time to review these discrepancies. I'd be happy to set up a call to review and illustrate the items above to come to the best solution. 
+
+Best,
+Sean Palac
