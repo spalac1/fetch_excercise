@@ -7,7 +7,7 @@ For this step, I investigated the Receipts, Users, and Brand data provided. For 
 # Step 2 - Answering Stakeholder Questions With SQL
 Refer to the file: query_questions.sql
 
-All questions are answered in order in this file. Comments are included at the start of each to outline the solutioning and idea behind the steps of each query.
+All questions are answered in order in this file using MySQL dialect. Comments are included at the start of each to outline the solutioning and idea behind the steps of each query.
 
 # Step 3 - Data Quality Analysis
 Refer to the file: data_quality_check.py
